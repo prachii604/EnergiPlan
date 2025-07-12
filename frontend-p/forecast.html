@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EnergiPlan - Forecast View</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">EnergiPlan</div>
+    <nav class="nav">
+      <a href="index.html">Dashboard</a>
+      <a href="forecast.html" class="active">Forecast</a>
+    </nav>
+  </header>
+
+  <main class="main-content forecast-grid">
+    <div class="card-panel">
+      <h2>🔆 Solar Forecast</h2>
+      <div id="solarPanel">Loading...</div>
+    </div>
+    <div class="card-panel">
+      <h2>🌬 Wind Forecast</h2>
+      <div id="windPanel">Coming soon...</div>
+    </div>
+  </main>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("forecastData"));
+
+    if (data) {
+      const solarHTML = `
+        <p><strong>City:</strong> ${data.city}</p>
+        <p><strong>Temperature:</strong> ${data.temperature}°C</p>
+        <p><strong>Humidity:</strong> ${data.humidity}%</p>
+        <p><strong>Cloud Cover:</strong> ${data.cloud_cover}%</p>
+        <p><strong>Irradiance:</strong> ${data.irradiance} W/m²</p>
+        <p><strong>Solar Output:</strong> ${data.prediction} units</p>
+      `;
+      document.getElementById("solarPanel").innerHTML = solarHTML;
+
+      // Wind Panel Placeholder
+      document.getElementById("windPanel").innerHTML = `
+        <p><em>Wind forecasting module under development.</em></p>
+        <p>Estimated arrival: Soon</p>
+      `;
+    } else {
+      document.getElementById("solarPanel").textContent = "No forecast found.";
+    }
+  </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnergiPlan - Forecast</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <video autoplay muted loop id="bgVideo">
+    <source src="windmill.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <header class="header">
+    <div class="logo">EnergiPlan</div>
+    <nav class="nav">
+      <a href="index.html">Dashboard</a>
+      <a href="forecast.html" class="active">Forecast</a>
+    </nav>
+    <button class="theme-btn" id="themeToggle">Theme</button>
+  </header>
+
+  <main class="main-content">
+    <h1 class="page-title" id="cityTitle">
+        <span class="sun-icon">☀️</span>
+        Solar and Wind Forecast for the City:
+    </h1>
+    <div class="forecast-grid">
+      <div class="card-panel">
+        <h2>🔆 Solar Forecast</h2>
+        <div id="solarPanel"></div>
+      </div>
+      <div class="card-panel">
+        <h2>🌬️ Wind Forecast</h2>
+        <div id="windPanel"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

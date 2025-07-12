@@ -1,0 +1,105 @@
+<!-- dashboard.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnergiPlan - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">EnergiPlan</div>
+    <nav class="nav">
+      <a href="index.html" class="active">Dashboard</a>
+      <a href="forecast.html" class="active">Forecast</a>
+    </nav>
+    <button class="theme-btn" id="themeToggle">Theme</button>
+  </header>
+
+  <main class="main-content">
+    <h1 class="page-title">Enter your city and decide best time to do your chores</h1>
+    <div class="input-group">
+      <label for="cityInput">Select City:</label>
+      <select id="cityInput">
+        <option value="">-- Choose a city --</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Jaipur">Jaipur</option>
+        <option value="Jodhpur">Jodhpur</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Ahmedabad">Ahmedabad</option>
+        <option value="Bengaluru">Bengaluru</option>
+        <option value="Pune">Pune</option>
+        <option value="Surat">Surat</option>
+        <option value="Lucknow">Lucknow</option>
+        <option value="Bhopal">Bhopal</option>
+        <option value="Ranchi">Ranchi</option>
+        <option value="Patna">Patna</option>
+        <option value="Raipur">Raipur</option>
+        <option value="Nagpur">Nagpur</option>
+      </select>
+      <button type="button" onclick="getForecast()">Get Forecast</button>
+
+    </div>
+
+    <div id="map"></div>
+    <div id="forecastOutput" class="card hidden"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html> -->
+
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnergiPlan - Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  ></script>
+  
+</head>
+
+<body>
+    <video autoplay muted loop id="bgVideo">
+    <source src="windmill.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <header class="header">
+    <div class="logo">EnergiPlan</div>
+    <nav class="nav">
+      <a href="index.html" class="active">Dashboard</a>
+      <a href="forecast.html">Forecast</a>
+    </nav>
+    <button class="theme-btn" id="themeToggle">Theme</button>
+  </header>
+
+  <main class="main-content">
+    <h1 class="page-title">
+      <span class="sun-icon">☀️</span>
+      Smart Energy Forecast
+    </h1>
+    <div class="input-group">
+      <input type="text" id="cityInput" placeholder="Enter City Name" />
+      <button id="getForecastBtn">Get Forecast</button>
+    </div>
+    <div id="map" class="card">This area will display energy forecasts or visualizations.</div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
